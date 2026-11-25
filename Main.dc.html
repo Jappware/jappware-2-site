@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jappware 2.0 — AI-native software delivery</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D0C}
+a{color:#EEF0EA}a:hover{color:#FFFFFF}
+.jw *{box-sizing:border-box}
+.jw .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.jw .h{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:-0.03em;margin:0}
+.jw .mono{font-family:'JetBrains Mono',ui-monospace,monospace;letter-spacing:0.12em;text-transform:uppercase}
+.jw .kicker{display:flex;align-items:center;gap:10px;margin:0 0 22px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A3ABA5}
+.jw .kicker::before{content:"";width:8px;height:8px;border-radius:2px;background:#F9CF0B;flex:none}
+.jw .kicker.dark{color:#4A524C}
+.jw .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:background .15s,border-color .15s,color .15s}
+.jw .btn svg{transition:transform .15s}
+.jw .btn:hover svg{transform:translateX(3px)}
+.jw .btn-y{background:#F9CF0B;color:#0B0D0C}.jw .btn-y:hover{background:#FFE066;color:#0B0D0C}
+.jw .btn-o{border:1.5px solid #4A524C;color:#EEF0EA}.jw .btn-o:hover{border-color:#EEF0EA;color:#FFFFFF}
+.jw .btn-d{background:#0B0D0C;color:#EEF0EA}.jw .btn-d:hover{background:#262C28;color:#FFFFFF}
+.jw .navlink{color:#C2C8C3;text-decoration:none;font-size:15px;padding:10px 0;border-bottom:1.5px solid transparent}.jw .navlink:hover{color:#FFFFFF;border-bottom-color:#EEF0EA}
+.jw .tag{display:inline-block;padding:5px 10px;border-radius:6px;background:#1A201D;color:#C2C8C3;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.04em}
+.jw .tag.light{background:#DFE2D9;color:#2E3430}
+.jw .tab{font:600 15px Inter,system-ui,sans-serif;min-height:46px;padding:0 20px;border-radius:999px;cursor:pointer;border:1.5px solid #4A524C;background:transparent;color:#C2C8C3}
+.jw .tab:hover{border-color:#EEF0EA;color:#FFFFFF}
+.jw .tab.on{background:#EEF0EA;color:#0B0D0C;border-color:#EEF0EA}
+.jw .tab:focus-visible,.jw .btn:focus-visible,.jw a:focus-visible{outline:2px solid #F9CF0B;outline-offset:3px}
+@media (max-width:760px){.jw .wrap{padding:0 20px}.jw .hide-sm{display:none}.jw .hero-h{font-size:50px !important}.jw .big-h{font-size:38px !important}.jw .span2{grid-column:auto !important}}
+</style>
+</helmet>
+<div class="jw" style="background: #0B0D0C; color: #EEF0EA; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.55">
+
+<header style="position: relative; z-index: 2; border-bottom: 1px solid #1E2421">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; min-height: 76px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #EEF0EA">
+<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#EEF0EA" stroke-width="2"></circle><circle cx="15" cy="15" r="7.5" fill="none" stroke="#EEF0EA" stroke-width="1.5" opacity="0.5"></circle><circle cx="15" cy="15" r="3.2" fill="#F9CF0B"></circle></svg>
+<span class="h" style="font-size: 21px; font-weight: 700; letter-spacing: -0.02em">Jappware 2.0</span>
+</a>
+<nav aria-label="Main" class="hide-sm" style="display: flex; gap: 30px; flex-wrap: wrap">
+<a class="navlink" href="#value">What you get</a>
+<a class="navlink" href="#how">How it works</a>
+<a class="navlink" href="#cases">Cases</a>
+<a class="navlink" href="#pricing">Pricing</a>
+<a class="navlink" href="#manifesto">Manifesto</a>
+</nav>
+<a class="btn btn-y" href="#contact" style="min-height: 44px; font-size: 15px">Book a call</a>
+</div>
+</header>
+
+<section id="top" style="position: relative; overflow: hidden; padding: 100px 0 112px">
+<div aria-hidden="true" style="position: absolute; right: -260px; top: -120px; width: 900px; height: 900px; border-radius: 50%; border: 1px solid rgba(238,240,234,0.07)"></div>
+<div aria-hidden="true" style="position: absolute; right: -110px; top: 30px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(238,240,234,0.1)"></div>
+<div aria-hidden="true" style="position: absolute; right: 20px; top: 160px; width: 340px; height: 340px; border-radius: 50%; border: 1px solid rgba(238,240,234,0.16)"></div>
+<div aria-hidden="true" style="position: absolute; right: 158px; top: 298px; width: 64px; height: 64px; border-radius: 50%; background: #F9CF0B; box-shadow: 0 0 70px rgba(249,207,11,0.4)"></div>
+<div class="wrap" style="position: relative">
+<p class="kicker">Jappware 2.0 · AI-native software delivery</p>
+<h1 class="h hero-h" style="font-size: 100px; line-height: 0.96; font-weight: 700; max-width: 960px">They quoted <span style="color: #6E7771; text-decoration: line-through; text-decoration-color: #6E7771; text-decoration-thickness: 5px">six months.</span><br>We shipped in <span style="color: #F9CF0B">five days.</span></h1>
+<p style="margin: 36px 0 0; max-width: 640px; font-size: 21px; color: #C2C8C3">You get a working, tested product in weeks instead of quarters, and you pay for the result, not for our hours. Every build is led by a senior engineer working with ten specialist AI agents.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px">
+<a class="btn btn-y" href="#contact">Book a 30-minute call <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="btn btn-o" href="#cases">See real cases <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+</div>
+</section>
+
+<section aria-label="Jappware in numbers" style="border-top: 1px solid #1E2421; border-bottom: 1px solid #1E2421">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 0">
+<div style="padding: 32px 24px 32px 0"><p class="h" style="font-size: 48px; font-weight: 700; line-height: 1">70+</p><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 15px">Products delivered for clients</p></div>
+<div style="padding: 32px 24px 32px 0"><p class="h" style="font-size: 48px; font-weight: 700; line-height: 1">50+</p><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 15px">In-house engineers in Lviv</p></div>
+<div style="padding: 32px 24px 32px 0"><p class="h" style="font-size: 48px; font-weight: 700; line-height: 1">23</p><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 15px">Delivery skills codified from real projects</p></div>
+<div style="padding: 32px 24px 32px 0"><p class="h" style="font-size: 48px; font-weight: 700; line-height: 1">10</p><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 15px">Specialist AI agents on every build</p></div>
+</div>
+</section>
+
+<section style="padding: 120px 0 40px">
+<div class="wrap">
+<p class="kicker">Sound familiar</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 900px">Most software projects fail long before the code does.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; margin-top: 48px">
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 20px; padding: 30px">
+<h3 class="h" style="font-size: 24px; font-weight: 700">Your estimate says six months</h3>
+<p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">And you won't know whether the idea works until most of the budget is gone.</p>
+</div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 20px; padding: 30px">
+<h3 class="h" style="font-size: 24px; font-weight: 700">Your roadmap keeps slipping</h3>
+<p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">The team is busy every day, yet the backlog only grows quarter after quarter.</p>
+</div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 20px; padding: 30px">
+<h3 class="h" style="font-size: 24px; font-weight: 700">AI output nobody trusts</h3>
+<p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">Code appears fast, but without tests, context or anyone accountable for the result.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="value" style="padding: 80px 0 120px">
+<div class="wrap">
+<p class="kicker">What you get</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 900px">A shorter path from your idea to the truth about it.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 36px 28px; margin-top: 52px">
+<div style="border-top: 1px solid #3A423D; padding-top: 22px"><h3 class="h" style="font-size: 24px; font-weight: 700">A working version in week one</h3><p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">Put it in front of real users and validate the idea while your budget is still intact.</p></div>
+<div style="border-top: 1px solid #3A423D; padding-top: 22px"><h3 class="h" style="font-size: 24px; font-weight: 700">A price for the outcome</h3><p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">We price results, not hours, so our speed becomes your saving instead of our loss.</p></div>
+<div style="border-top: 1px solid #3A423D; padding-top: 22px"><h3 class="h" style="font-size: 24px; font-weight: 700">Code you can own</h3><p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">Tested, reviewed and documented, with specs and decisions recorded. No black box.</p></div>
+<div style="border-top: 1px solid #3A423D; padding-top: 22px"><h3 class="h" style="font-size: 24px; font-weight: 700">One accountable engineer</h3><p style="margin: 10px 0 0; color: #A3ABA5; font-size: 16px">A senior engineer owns your result and signs off every stage, from spec to release.</p></div>
+</div>
+</div>
+</section>
+
+<section id="lens" style="padding: 120px 0; border-top: 1px solid #1E2421">
+<div class="wrap">
+<p class="kicker">The first lens</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 960px">AI isn't the cherry on top. It's the lens we look through at your business.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 20px; margin-top: 52px">
+
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 26px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #A3ABA5">How the IT industry works</p>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 6px 0">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 4px">
+<span class="mono" style="font-size: 12px; color: #EEF0EA">AI</span>
+<svg width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path d="M22 2 C20 10 15 14 13 19" fill="none" stroke="#6E7771" stroke-width="2"></path><path d="M22 2 C24 10 29 14 31 19" fill="none" stroke="#6E7771" stroke-width="2"></path><circle cx="13" cy="24" r="8" fill="#8A3A33"></circle><circle cx="31" cy="24" r="8" fill="#74302A"></circle></svg>
+</div>
+<div style="width: 42%; min-height: 48px; border-radius: 12px; background: #1E2421; display: flex; align-items: center; justify-content: center; font-weight: 500; color: #C2C8C3">Industry</div>
+<div style="width: 58%; min-height: 48px; border-radius: 12px; background: #1E2421; display: flex; align-items: center; justify-content: center; font-weight: 500; color: #C2C8C3">Experience</div>
+<div style="width: 74%; min-height: 48px; border-radius: 12px; background: #1E2421; display: flex; align-items: center; justify-content: center; font-weight: 500; color: #C2C8C3">Technologies</div>
+<div style="width: 90%; min-height: 48px; border-radius: 12px; background: #1E2421; display: flex; align-items: center; justify-content: center; font-weight: 500; color: #C2C8C3">People</div>
+</div>
+<p style="margin: 0; color: #A3ABA5; font-size: 16px">The classic pyramid: people, technologies, experience and industry, with AI added on top as a nice extra. Things get a little faster, but nothing really changes for you.</p>
+</div>
+
+<div style="background: #121614; border: 1px solid #3A423D; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 26px">
+<p class="mono" style="margin: 0; font-size: 12px; color: #EEF0EA">How Jappware 2.0 works</p>
+<div role="img" aria-label="Concentric lenses: AI, then industry, experience, technologies and people, all focused on the client's business" style="position: relative; width: 100%; max-width: 420px; aspect-ratio: 1; margin: 0 auto">
+<div style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid #EEF0EA"></div>
+<div style="position: absolute; inset: 9%; border-radius: 50%; border: 1px solid #3A423D"></div>
+<div style="position: absolute; inset: 18%; border-radius: 50%; border: 1px solid #3A423D"></div>
+<div style="position: absolute; inset: 27%; border-radius: 50%; border: 1px solid #3A423D"></div>
+<div style="position: absolute; inset: 36%; border-radius: 50%; border: 1px solid #3A423D"></div>
+<div style="position: absolute; inset: 44%; border-radius: 50%; background: #F9CF0B; box-shadow: 0 0 36px rgba(249,207,11,0.45)"></div>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 3%; text-align: center; font-size: 12px; color: #EEF0EA">AI</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 12%; text-align: center; font-size: 11px; color: #C2C8C3">Industry</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 21%; text-align: center; font-size: 11px; color: #C2C8C3">Experience</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 30%; text-align: center; font-size: 10px; color: #C2C8C3">Technologies</span>
+<span class="mono" style="position: absolute; left: 0; right: 0; top: 38.5%; text-align: center; font-size: 10px; color: #C2C8C3">People</span>
+</div>
+<p style="margin: 0; color: #C2C8C3; font-size: 16px">We turned the pyramid into a telescope. AI is the first lens, and it holds everything else: industry, experience, technologies and people. All of it is focused on one point: your business.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span class="tag">Problems</span>
+<span class="tag">Needs</span>
+<span class="tag">Pains</span>
+<span class="tag">Tasks</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="how" style="padding: 120px 0; background: #EEF0EA; color: #0B0D0C">
+<div class="wrap">
+<p class="kicker dark">How it works</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 900px">Most teams use AI as a one-shot. We built a chain.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 20px; margin-top: 52px">
+<div style="border: 1px solid #D3D7CD; border-radius: 22px; padding: 32px; background: #E4E7DE">
+<p class="mono" style="margin: 0; font-size: 12px; color: #4A524C">One-shot AI</p>
+<p class="h" style="margin-top: 20px; font-size: 32px; font-weight: 700; color: #5E655F">Idea → Code</p>
+<p style="margin: 6px 0 0; font-style: italic; color: #8A3A33; font-size: 18px">…and pray.</p>
+<p style="margin: 22px 0 0; color: #3D433F">It looks fast but costs you more: a missing piece of context surfaces only in the code, where it is most expensive to fix, and every new task starts from a blank page.</p>
+</div>
+<div style="border: 1.5px solid #0B0D0C; border-radius: 22px; padding: 32px; background: #FFFFFF">
+<p class="mono" style="margin: 0; font-size: 12px; color: #0B0D0C">The Jappware 2.0 chain</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; align-items: center">
+<span class="tag light">Idea</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Research</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Requirements</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Architecture</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Design</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Code</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Tests</span><span aria-hidden="true" style="color: #8E968F">→</span>
+<span class="tag light">Deploy</span>
+</div>
+<p style="margin: 22px 0 0; color: #3D433F">Every link adds <strong>context, verification and iteration</strong>. The question shifts from “how do we write this code” to “what are we building for you, and in what order”.</p>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 32px 24px; margin-top: 64px">
+<div style="border-top: 1.5px solid #0B0D0C; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #5E655F">Stage 1</p><h3 class="h" style="margin-top: 8px; font-size: 24px; font-weight: 700">Three strategies, not one guess</h3><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">You choose between genuinely different paths, each with its trade-offs laid out.</p></div>
+<div style="border-top: 1.5px solid #0B0D0C; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #5E655F">Stage 2</p><h3 class="h" style="margin-top: 8px; font-size: 24px; font-weight: 700">A spec with no grey areas</h3><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">Every vague requirement is challenged before any code exists, so there are no surprises later.</p></div>
+<div style="border-top: 1.5px solid #0B0D0C; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #5E655F">Stage 3</p><h3 class="h" style="margin-top: 8px; font-size: 24px; font-weight: 700">Tests before code</h3><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">Each feature ships with the test that proves it works. You see test results, not promises.</p></div>
+<div style="border-top: 1.5px solid #0B0D0C; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #5E655F">Stage 4</p><h3 class="h" style="margin-top: 8px; font-size: 24px; font-weight: 700">Independent review, then release</h3><p style="margin: 10px 0 0; color: #3D433F; font-size: 16px">Whoever wrote the code never approves it. Every requirement is verified before it reaches you.</p></div>
+</div>
+</div>
+</section>
+
+<section style="padding: 120px 0">
+<div class="wrap">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap">
+<div style="max-width: 780px">
+<p class="kicker">The crew behind your product</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700">Ten specialist agents. One senior engineer accountable for your result.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #A3ABA5">Agents do around 80% of the work. The engineer owns 100% of the outcome: the boundaries, the hard questions and the final sign-off.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; margin-top: 52px">
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Researcher</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Think</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Starts your spec from what already works in the market.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Strategist</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Think</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Gives you three different strategies to choose from.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Analyst</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Think</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Weighs each option through engineering, business and UX lenses.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Devil's Advocate</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Challenge</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Finds the vague spots and failure modes in your requirements.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Critic</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Challenge</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Catches gaps and contradictions between spec and design.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Explorer</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Map</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Learns your existing codebase so new work fits right in.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Pen-Keeper</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Map</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Keeps your design system consistent across every screen.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Test-Author</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Build</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Writes the failing test before any implementation.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Implementer</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Build</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Makes the test pass, one small task at a time.</p></div>
+<div style="background: #121614; border: 1px solid #232A26; border-radius: 18px; padding: 22px"><h3 class="h" style="font-size: 20px; font-weight: 700">Reviewer</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #8E968F">Verify</p><p style="margin: 10px 0 0; font-size: 15px; color: #A3ABA5">Gives an independent verdict against your spec before release.</p></div>
+<div class="span2" style="background: #EEF0EA; color: #0B0D0C; border-radius: 18px; padding: 22px; grid-column: auto / span 2; min-width: 0; display: flex; gap: 16px; align-items: flex-start">
+<span aria-hidden="true" style="flex: none; width: 10px; height: 10px; border-radius: 50%; background: #F9CF0B; margin-top: 9px; box-shadow: 0 0 0 4px rgba(249,207,11,0.25)"></span>
+<div><h3 class="h" style="font-size: 22px; font-weight: 700">Senior Jappware engineer</h3><p class="mono" style="margin: 4px 0 0; font-size: 11px; color: #4A524C">Owns your result</p><p style="margin: 10px 0 0; font-size: 15px; color: #2E3430">Designs the system boundaries, asks the right questions, reviews without mercy and signs off every stage for you.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="cases" style="padding: 120px 0; border-top: 1px solid #1E2421">
+<div class="wrap">
+<p class="kicker">Proof, not promises</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 880px">Same scope. A fraction of the time and budget.</h2>
+<div role="tablist" aria-label="Case studies" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 40px">
+<button role="tab" aria-selected="{{caseA}}" class="{{tabA}}" onClick="{{pickA}}">CopyTrader · fintech</button>
+<button role="tab" aria-selected="{{caseB}}" class="{{tabB}}" onClick="{{pickB}}">Night Shore · 3D browser game</button>
+</div>
+<div style="margin-top: 24px; background: #121614; border: 1px solid #232A26; border-radius: 24px; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 44px">
+<div>
+<p class="mono" style="margin: 0; font-size: 12px; color: #A3ABA5">{{c.kicker}}</p>
+<h3 class="h" style="margin-top: 12px; font-size: 42px; font-weight: 700; line-height: 1.05">{{c.title}}</h3>
+<p style="margin: 16px 0 0; color: #C2C8C3; font-size: 18px">{{c.body}}</p>
+<ul style="margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{c.points}}" as="pt" hint-placeholder-count="4">
+<li style="display: flex; gap: 12px; align-items: flex-start; color: #DDE1DB; font-size: 16px"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#C2C8C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>{{pt}}</span></li>
+</sc-for>
+</ul>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-content: start">
+<div style="border: 1px solid #2E3632; border-radius: 18px; padding: 22px"><p class="mono" style="margin: 0; font-size: 11px; color: #A3ABA5">Classic process</p><p class="h" style="margin-top: 12px; font-size: 32px; font-weight: 700; color: #8E968F">{{c.oldTime}}</p><p style="margin: 2px 0 0; color: #8E968F; font-size: 14px">{{c.oldTeam}}</p><p class="h" style="margin-top: 14px; font-size: 24px; font-weight: 700; color: #8E968F">{{c.oldCost}}</p></div>
+<div style="border: 1.5px solid #EEF0EA; border-radius: 18px; padding: 22px"><p class="mono" style="margin: 0; font-size: 11px; color: #EEF0EA">Jappware 2.0</p><p class="h" style="margin-top: 12px; font-size: 32px; font-weight: 700; color: #FFFFFF">{{c.newTime}}</p><p style="margin: 2px 0 0; color: #C2C8C3; font-size: 14px">1 senior engineer + 10 agents</p><p class="h" style="margin-top: 14px; font-size: 24px; font-weight: 700; color: #FFFFFF">{{c.newCost}}</p></div>
+<div style="grid-column: span 2; border-radius: 18px; padding: 20px 22px; background: #1A201D; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap"><span class="h" style="font-size: 26px; font-weight: 700; display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #F9CF0B"></span>{{c.ratio}}</span><span style="font-size: 14px; color: #A3ABA5">{{c.note}}</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing" style="padding: 120px 0; background: #EEF0EA; color: #0B0D0C">
+<div class="wrap">
+<p class="kicker dark">Pricing</p>
+<h2 class="h hero-h" style="font-size: 96px; line-height: 0.95; font-weight: 700">You pay for results.<br><span style="color: #8E968F">Not hours.</span></h2>
+<p style="margin: 30px 0 0; max-width: 680px; font-size: 20px; color: #2E3430">When AI cuts the time twentyfold, billing by the hour would only punish you for our speed. You buy a delivered product, a faster path to market and runway you didn't burn.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; margin-top: 52px">
+<div style="background: #FFFFFF; border: 1px solid #D3D7CD; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+<h3 class="h" style="font-size: 28px; font-weight: 700">5-Day Proof</h3>
+<p class="mono" style="margin: 0; font-size: 11px; color: #4A524C">Best for validating an idea</p>
+<p style="margin: 4px 0 0; color: #3D433F; font-size: 16px">A working build of your riskiest idea in five days, so you can test it while the budget is intact.</p>
+<p class="h" style="margin-top: auto; padding-top: 18px; font-size: 24px; font-weight: 700">[FIXED PRICE]</p>
+</div>
+<div style="background: #FFFFFF; border: 1.5px solid #0B0D0C; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+<h3 class="h" style="font-size: 28px; font-weight: 700">Product Launch</h3>
+<p class="mono" style="margin: 0; font-size: 11px; color: #4A524C">Best for going to market</p>
+<p style="margin: 4px 0 0; color: #3D433F; font-size: 16px">From idea to production through every stage: spec, architecture, tests, review and release. Priced by outcome.</p>
+<p class="h" style="margin-top: auto; padding-top: 18px; font-size: 24px; font-weight: 700">[FROM PRICE]</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D3D7CD; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+<h3 class="h" style="font-size: 28px; font-weight: 700">AI-Native Team</h3>
+<p class="mono" style="margin: 0; font-size: 11px; color: #4A524C">Best for an ongoing roadmap</p>
+<p style="margin: 4px 0 0; color: #3D433F; font-size: 16px">Senior engineers and the full agent crew on your roadmap, measured by releases and quality in production.</p>
+<p class="h" style="margin-top: auto; padding-top: 18px; font-size: 24px; font-weight: 700">[MONTHLY PRICE]</p>
+</div>
+</div>
+<div style="margin-top: 36px"><a class="btn btn-d" href="#contact">Get a quote for your project <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+</div>
+</section>
+
+<section style="padding: 120px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 56px; align-items: start">
+<div>
+<p class="kicker">Speed means less risk</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700">Speed isn't the goal. It's how we lower your risk.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="border: 1px solid #2E3632; border-radius: 18px; padding: 24px"><h3 class="h" style="font-size: 23px; font-weight: 700; color: #A3ABA5">Six months blind</h3><p style="margin: 6px 0 0; color: #8E968F">You risk building the wrong thing and finding out after the budget is spent.</p></div>
+<div style="border: 1.5px solid #EEF0EA; border-radius: 18px; padding: 24px"><h3 class="h" style="font-size: 23px; font-weight: 700">Two weeks to a working version</h3><p style="margin: 6px 0 0; color: #C2C8C3">Real users try your product while the budget is intact. Fast means a short loop to the truth, never skipping tests or review.</p></div>
+</div>
+</div>
+</section>
+
+<section id="manifesto" style="padding: 120px 0; border-top: 1px solid #1E2421">
+<div class="wrap">
+<p class="kicker">Our manifesto</p>
+<h2 class="h big-h" style="font-size: 56px; line-height: 1.04; font-weight: 700; max-width: 900px">Eight principles behind every project we deliver for you.</h2>
+<ol style="list-style: none; margin: 52px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 36px 28px">
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">01</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Results, not hours</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">Time is our internal efficiency metric, never your price tag.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">02</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">AI is the first lens</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">From the first call, we see your problem through what is now possible.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">03</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Engineers are architects</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">Their value is in the right questions, clear boundaries and rigorous review.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">04</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Domain is the multiplier</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">Our first question is who on the team has already worked in your domain.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">05</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Speed lowers risk</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">A short feedback loop instead of months of building blind.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">06</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Review matters more</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">Whoever wrote the code never approves it.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">07</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Tests are the loop</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">Write, run, see it fail, fix. You get test output, not “it works”.</p></li>
+<li style="border-top: 1px solid #3A423D; padding-top: 20px"><p class="mono" style="margin: 0; font-size: 11px; color: #8E968F">08</p><h3 class="h" style="margin-top: 8px; font-size: 22px; font-weight: 700">Honest about uncertainty</h3><p style="margin: 8px 0 0; color: #A3ABA5; font-size: 16px">We would rather say “we don't know yet” than give you a confident guess.</p></li>
+</ol>
+</div>
+</section>
+
+<section style="padding: 120px 0; background: #121614; border-top: 1px solid #1E2421; border-bottom: 1px solid #1E2421">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 56px; align-items: center">
+<div>
+<p class="kicker">Built on experience</p>
+<h2 class="h big-h" style="font-size: 52px; line-height: 1.06; font-weight: 700">Your project starts with everything we've already learned.</h2>
+</div>
+<div>
+<p style="margin: 0; color: #C2C8C3; font-size: 19px">Anyone can copy the AI tools in a week. What can't be copied is experience. Every bug we catch becomes a rule our agents read on day one, and every pattern that repeats becomes a skill. So your build benefits from 70+ products before it, and makes the next one better.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 26px">
+<span class="tag">Skills</span>
+<span class="tag">Rules</span>
+<span class="tag">Agents</span>
+<span class="tag">Part of our Definition of Done</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 120px 0">
+<div class="wrap" style="max-width: 960px">
+<p class="kicker">Why Jappware 2.0</p>
+<blockquote style="margin: 0">
+<p class="h" style="font-size: 40px; line-height: 1.2; font-weight: 600">“We came out of the engineering community, where people try to make technology genuinely useful for business. AI is the key that lets the small outrun the big, and our engineers who taught AI their skills and rules showed us how.”</p>
+<footer style="margin-top: 28px; display: flex; align-items: center; gap: 16px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 50%; background: #1E2421; display: inline-flex; align-items: center; justify-content: center; color: #EEF0EA; font-weight: 700; font-family: 'Space Grotesk', sans-serif">AR</span>
+<span><strong style="display: block">Andrii Rymar</strong><span style="color: #A3ABA5; font-size: 15px">Founder, Jappware</span></span>
+</footer>
+</blockquote>
+</div>
+</section>
+
+<section id="contact" style="padding: 120px 0 110px; position: relative; overflow: hidden; border-top: 1px solid #1E2421">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 60px; width: 760px; height: 760px; margin-left: -380px; border-radius: 50%; border: 1px solid rgba(238,240,234,0.08)"></div>
+<div class="wrap" style="position: relative; text-align: center">
+<h2 class="h hero-h" style="font-size: 84px; line-height: 1; font-weight: 700">Bring us the project<br>they quoted <span style="color: #F9CF0B">six months</span> for.</h2>
+<p style="margin: 28px auto 0; max-width: 600px; color: #C2C8C3; font-size: 20px">In 30 minutes, we'll show you what a working first version could look like, how long it really takes and what it costs as a result, not as hours.</p>
+<div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 38px">
+<a class="btn btn-y" href="mailto:[CONTACT EMAIL]?subject=Scoping%20call">Book a 30-minute call <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5L14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="btn btn-o" href="mailto:[CONTACT EMAIL]">Email us</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1E2421; padding: 36px 0">
+<div class="wrap" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: #8E968F; font-size: 14px">
+<span>© Jappware · Lviv, Ukraine</span>
+<nav aria-label="Footer" style="display: flex; gap: 22px; flex-wrap: wrap"><a href="#how" style="color: #A3ABA5">How it works</a><a href="#cases" style="color: #A3ABA5">Cases</a><a href="#manifesto" style="color: #A3ABA5">Manifesto</a><a href="#top" style="color: #A3ABA5">Privacy policy</a></nav>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'a' }; }
+  renderVals() {
+    const cases = {
+      a: {
+        kicker: 'Fintech · B2B2C copy trading',
+        title: 'CopyTrader',
+        body: 'A trader places one trade, and it reaches every follower’s broker account, sized to their balance, exactly once. Built for private trading communities that keep their own brand.',
+        points: ['Queue-based fan-out that scales with your community', 'Exactly-once routing, so no trade is ever duplicated', 'Orders sized per follower; one failure never blocks the rest', 'Live dashboard and a full audit trail'],
+        oldTime: '~6 months', oldTeam: 'Team of 4 · client’s own estimate', oldCost: '~$170,000',
+        newTime: '5 days', newCost: '~$10,000',
+        ratio: '~17× cheaper, ~25× faster', note: 'To a working, spec-verified build'
+      },
+      b: {
+        kicker: 'Entertainment · WebGL',
+        title: 'Night Shore',
+        body: 'An open-world 3D city game that runs in any browser, with no install and one link to share. Traffic, police, missions and our own Jappware office inside the city.',
+        points: ['A living city with traffic, people and a day/night cycle', 'Cars, a tank and a helicopter', 'Five-star police system and a five-chapter story', 'Playable from a single link'],
+        oldTime: '~5 months', oldTeam: 'Team of 5 · typical estimate', oldCost: '~$150,000',
+        newTime: '~2 weeks', newCost: '~$15,000',
+        ratio: '~10× cheaper, ~10× faster', note: 'Jappware estimate for this scope'
+      }
+    };
+    const t = this.state.tab;
+    return {
+      c: cases[t],
+      caseA: t === 'a' ? 'true' : 'false', caseB: t === 'b' ? 'true' : 'false',
+      tabA: t === 'a' ? 'tab on' : 'tab', tabB: t === 'b' ? 'tab on' : 'tab',
+      pickA: () => this.setState({ tab: 'a' }), pickB: () => this.setState({ tab: 'b' })
+    };
+  }
+}
+</script>
+</body>
+</html>
