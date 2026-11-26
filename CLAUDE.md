@@ -20,6 +20,12 @@ Content decisions come from the company manifestos (in the Claude project "Jappw
 
 If a requested change contradicts a manifesto, say so and propose a version that fits. Do not "improve" copy away from the manifesto voice.
 
+**Visual identity & brand system** (Claude Organization project "Visual identity & brand system", owned by the Jappware team) is the source of truth for everything visual and for tone of voice. That covers logo, colors, typography, spacing, imagery and components.
+
+- Before any visual or copy-tone change, check it against that project. If it and `index.html` or §7 disagree, the brand system wins. Point out the mismatch instead of copying the old value.
+- In a claude.ai chat inside that project, its knowledge is already in context.
+- **Claude Code (CLI, desktop or cloud) cannot open claude.ai Projects.** Read the exported copy in `brand/` in this repo instead. If `brand/` is missing or outdated, say so and ask the user to export the latest files from the project. Never guess brand values.
+
 ## 3. Repo layout and stack
 
 ```
@@ -84,6 +90,8 @@ Site copy is **English**. Discussion with the team is Ukrainian.
 **Open placeholders** (must be replaced before showing externally): `[CONTACT EMAIL]`, `[FIXED PRICE]`, `[FROM PRICE]`, `[MONTHLY PRICE]`. No contact form or calendar yet — "Book a call" is a `mailto:`.
 
 ## 7. Visual system
+
+These tokens are what `index.html` uses today. The **Visual identity & brand system** project (§2) is authoritative. Update this table when they differ.
 
 Dark, calm, technical. One accent, used sparingly.
 
